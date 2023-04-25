@@ -1,0 +1,11 @@
+.main {
+  margin: 50px auto;
+  width: 40%;
+  height: 160px;
+  background-color: aqua;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
