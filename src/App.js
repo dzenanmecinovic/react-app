@@ -206,7 +206,7 @@ function App() {
       {/* </div> */}
       <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route index element={<Login />} />
         <Route
           path="/about-us"
           element={
@@ -247,6 +247,23 @@ function App() {
                   reviews={hotel.reviews}
                 />
               ))}
+            </div>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <div className="error">
+              <h1
+                style={{
+                  fontSize: "10rem",
+                  color: "red",
+                  textAlign: "center",
+                  marginTop: "5rem",
+                }}
+              >
+                Error 404
+              </h1>
             </div>
           }
         />
