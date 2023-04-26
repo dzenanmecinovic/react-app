@@ -11,60 +11,18 @@ function Form() {
 
   // 2. jedan state za sva input polja
   const [userInput, setUserInput] = useState({
-    name: "",
-    lastName: "",
     email: "",
-    hobby: "",
-    phone: "",
+    password: "",
   });
   return (
     <div className="formContainer">
+      <h3>Login</h3>
       <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          // console.log({ name });
-          // console.log("lastName", lastName);
-          // console.log({ email });
-          // console.log({ hobby });
-          // console.log({ phone });
-          console.log({ userInput });
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log(userInput);
         }}
       >
-        <label htmlFor="firstName">Unesite vase ime</label>
-        <input
-          type="text"
-          id="firstName"
-          name="firstName"
-          required
-          // innerText={"ime"}
-          value={userInput.name}
-          onChange={(event) => {
-            setUserInput((prev) => ({
-              ...prev,
-              name: event.target.value,
-            }));
-          }}
-        />
-        <br />
-        <br />
-
-        <label htmlFor="lastName">Unesite vase prezime</label>
-        <input
-          type="text"
-          id="lastName"
-          name="lastName"
-          required
-          value={userInput.lastName}
-          onChange={(event) => {
-            setUserInput((prev) => ({
-              ...prev,
-              lastName: event.target.value,
-            }));
-          }}
-        />
-        <br />
-        <br />
-
         <label htmlFor="email">Unesite vasu email adresu</label>
         <input
           type="email"
@@ -72,48 +30,31 @@ function Form() {
           name="email"
           required
           value={userInput.email}
-          onChange={(event) => {
+          onChange={(e) => {
             setUserInput((prev) => ({
               ...prev,
-              email: event.target.value,
+              email: e.target.value,
             }));
           }}
         />
         <br />
         <br />
 
-        <label htmlFor="hobi">Unesite vas hobi</label>
+        <label htmlFor="password">Unesite password</label>
         <input
-          type="text"
-          id="hobi"
-          name="hobi"
-          value={userInput.hobby}
-          onChange={(event) => {
+          type="password"
+          id="pass"
+          name="pass"
+          value={userInput.password}
+          onChange={(e) => {
             setUserInput((prev) => ({
               ...prev,
-              hobby: event.target.value,
+              password: e.target.value,
             }));
           }}
         />
         <br />
         <br />
-
-        <label htmlFor="phone">Unesite vas broj telefona</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={userInput.phone}
-          onChange={(event) => {
-            setUserInput((prev) => ({
-              ...prev,
-              phone: event.target.value,
-            }));
-          }}
-        />
-        <br />
-        <br />
-
         <button type="submit">Potvrdi</button>
       </form>
     </div>

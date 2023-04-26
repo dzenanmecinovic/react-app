@@ -18,7 +18,9 @@ export default function PersonCard(props) {
           style={{ color: "darkblue" }}
           className="gitHub"
         >
-          <FaGithub style={{ width: "50px", height: "50px" }} />
+          <FaGithub
+            style={{ width: "50px", height: "50px", color: "#252525" }}
+          />
         </a>
       </div>
     </div>

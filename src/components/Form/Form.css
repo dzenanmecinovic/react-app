@@ -1,6 +1,30 @@
 .formContainer {
   width: 70%;
   margin: auto;
-  margin-top: 150px;
-  margin-bottom: 50px;
+  margin-top: 2rem;
+}
+
+.formContainer h3 {
+  font-size: 1.5rem;
+  font-family: "Trebuchet MS";
+  padding-bottom: 1rem;
+  width: 70%;
+  margin: auto;
+}
+
+.formContainer input {
+  margin-left: 2rem;
+  border-radius: 50px;
+  border: solid 1px #252525;
+  padding-inline: 10px;
+  padding-block: 2.5px;
+  width: 20%;
+}
+
+.formContainer button {
+  width: 20%;
+  border-radius: 50px;
+  background-color: #252525;
+  color: #fff;
+  margin-left: 2.2rem;
 }
