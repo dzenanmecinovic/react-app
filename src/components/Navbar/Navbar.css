@@ -1,7 +1,16 @@
 .header {
   height: 15vh;
-  background-color: rgb(36, 51, 91);
+  background-color: rgb(51, 189, 143);
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.header h2 {
+  padding: 0.7rem;
+  transition: all 0.3s;
+}
+
+.header h2:hover {
+  transform: scale(1.05);
 }

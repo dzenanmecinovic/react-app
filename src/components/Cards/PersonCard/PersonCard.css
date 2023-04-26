@@ -51,3 +51,8 @@
   position: absolute;
   top: 130px;
 }
+
+.secondPart .ikonica {
+  position: relative;
+  bottom: 0.8rem;
+}

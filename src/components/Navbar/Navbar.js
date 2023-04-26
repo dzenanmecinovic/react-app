@@ -4,13 +4,14 @@ import { NavLink } from "react-router-dom";
 
 function Navbar(props) {
   const acitveStyles = {
-    backgroundColor: "lightblue",
-    color: "darkblue",
+    backgroundColor: "#252525",
+    color: "#fff",
     textDecoration: "none",
+    borderRadius: "50px",
   };
   const styles = {
-    backgroundColor: "blue",
     textDecoration: "none",
+    color: "black",
   };
   return (
     <header className="header">
@@ -18,13 +19,19 @@ function Navbar(props) {
         to={"/"}
         style={({ isActive }) => (isActive ? acitveStyles : styles)}
       >
-        <h1 style={{ fontFamily: "Arial" }}>Logo</h1>
+        <h2 style={{ fontFamily: "Arial" }}>Login</h2>
       </NavLink>
       <NavLink
         to={"/about-us"}
         style={({ isActive }) => (isActive ? acitveStyles : styles)}
       >
-        <h1 style={{ fontFamily: "Arial" }}>About Us</h1>
+        <h2 style={{ fontFamily: "Arial" }}>About Us</h2>
+      </NavLink>
+      <NavLink
+        to={"/booking"}
+        style={({ isActive }) => (isActive ? acitveStyles : styles)}
+      >
+        <h2 style={{ fontFamily: "Arial" }}>Booking</h2>
       </NavLink>
     </header>
   );

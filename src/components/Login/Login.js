@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Form.css";
+import "./Login.css";
 
 function Form() {
   // 1. nacin - za svako input polje poseban state
@@ -23,7 +23,7 @@ function Form() {
           console.log(userInput);
         }}
       >
-        <label htmlFor="email">Unesite vasu email adresu</label>
+        <label htmlFor="email">Unesite email adresu</label>
         <input
           type="email"
           id="email"
@@ -40,7 +40,7 @@ function Form() {
         <br />
         <br />
 
-        <label htmlFor="password">Unesite password</label>
+        <label htmlFor="password">Unesite password </label>
         <input
           type="password"
           id="pass"

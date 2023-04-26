@@ -19,6 +19,7 @@ export default function PersonCard(props) {
           className="gitHub"
         >
           <FaGithub
+            className="ikonica"
             style={{ width: "50px", height: "50px", color: "#252525" }}
           />
         </a>

@@ -7,7 +7,7 @@ import persons from "./common/persons.json";
 import hotels from "./common/hotels.json";
 import teamsJSON from "./common/teams.json";
 import HotelCard from "./components/Cards/HotelCard/HotelCard";
-import Form from "./components/Form/Form";
+import Login from "./components/Login/Login";
 import TeamCard from "./components/Cards/TeamCard/TeamCard";
 import QuoteCard from "./components/Cards/QuoteCard/QuoteCard";
 import Pagination from "./components/Pagination/Pagination";
@@ -206,7 +206,7 @@ function App() {
       {/* </div> */}
       <Navbar />
       <Routes>
-        <Route path="/" element={<Form />} />
+        <Route path="/" element={<Login />} />
         <Route
           path="/about-us"
           element={
@@ -232,7 +232,24 @@ function App() {
             </div>
           }
         />
-        <Route path="/booking" />
+        <Route
+          path="/booking"
+          element={
+            <div className="hotels">
+              {hotels.map((hotel) => (
+                <HotelCard
+                  key={hotel.id}
+                  imageURL={hotel.imageURL}
+                  name={hotel.name}
+                  stars={hotel.stars}
+                  description={hotel.description}
+                  rating={hotel.rating}
+                  reviews={hotel.reviews}
+                />
+              ))}
+            </div>
+          }
+        />
       </Routes>
     </>
   );
