@@ -7,20 +7,15 @@ export default function PersonCard(props) {
     <div className="card">
       <div className="firstPart">
         <img src={props.imageURL} alt={"profile_img"} className="img" />
-        <h1>{props.fullname}</h1>
+        <h3>{props.fullName}</h3>
         <h3>{props.location}</h3>
       </div>
       <div className="secondPart">
         <p>{props.description}</p>
-        <a
-          href={props.goToRepositories}
-          target="blank"
-          style={{ color: "darkblue" }}
-          className="gitHub"
-        >
+        <a href={props.goToRepositories} target="blank" className="gitHub">
           <FaGithub
             className="ikonica"
-            style={{ width: "50px", height: "50px", color: "#252525" }}
+            style={{ width: "60px", height: "60px", color: "#252525" }}
           />
         </a>
       </div>

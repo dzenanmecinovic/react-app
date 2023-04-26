@@ -35,7 +35,7 @@ export default function HotelCard(props) {
   } else if (rating >= 9 && rating <= 10) {
     reaction = "Wonderful";
   }
-  const showRecomendation = rating >= 8 ? true : false;
+  const showRecomendation = rating >= 8;
 
   return (
     <div className="hotelgrid">
@@ -53,7 +53,7 @@ export default function HotelCard(props) {
           </h3>
           <p className="hoteldesc">{props.description}</p>
           <p>
-            <span className="hotelrat"> {props.rating} </span>{" "}
+            <span className="hotelrat"> {props.rating} </span>
             <span style={{ color: "gray" }}>{reaction} </span>
             <span style={{ color: "gray" }}>({props.reviews} </span>)
           </p>
@@ -61,6 +61,7 @@ export default function HotelCard(props) {
           {/* {showRecomendation && <p>Recomendation</p>} */}
           {/* 2. nacin uslovnog prikazivanja (Conditional rendering) */}
           {showRecomendation ? <p>Recomendation</p> : <></>}
+          <button>Book</button>
         </div>
       </div>
     </div>

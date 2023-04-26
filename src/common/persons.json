@@ -2,33 +2,33 @@
   {
     "id": 1,
     "imageURL": "https://avatars.githubusercontent.com/u/89378479?v=4",
-    "fullName": "Dzenan Kosuta",
-    "description": "Dzenan is a rising Web developer...",
-    "location": "Novi pazar, Serbia",
+    "fullName": "Dzenan Košuta",
+    "description": "Dzenan is a Full-Stack Web developer...",
+    "location": "Novi Pazar, Serbia",
     "goToRepositories": "https://github.com/dzenankosuta?tab=repositories"
   },
   {
     "id": 2,
     "imageURL": "https://avatars.githubusercontent.com/u/111905617?v=4",
-    "fullName": "Dzenan Mecinovic",
+    "fullName": "Dzenan Mecinović",
     "description": "Dzenan is a rising Front-end Web developer.",
-    "location": "Novi pazar, Serbia",
+    "location": "Novi Pazar, Serbia",
     "goToRepositories": "https://github.com/dzenanmecinovic?tab=repositories"
   },
   {
     "id": 3,
     "imageURL": "https://www.borisradivojkov.com/assets/images/profesionalni-poslovni-portret-rukovodioca-600x600.jpg",
-    "fullName": "Aladin Zecic",
-    "description": "Aladin is a rising Web developer...",
-    "location": "Novi pazar, Serbia",
+    "fullName": "Aladin Zečić",
+    "description": "Aladin is a chemistry student and web developer.",
+    "location": "Novi Pazar, Serbia",
     "goToRepositories": "https://github.com/aladinzecic?tab=repositories"
   },
   {
     "id": 4,
     "imageURL": "https://avatars.githubusercontent.com/u/111905979?v=4",
-    "fullName": "Haris Muslic",
+    "fullName": "Haris Muslić",
     "description": "Haris is a rising Web developer...",
-    "location": "Novi pazar, Serbia",
+    "location": "Novi Pazar, Serbia",
     "goToRepositories": "https://github.com/harismuslic04?tab=repositories"
   }
 ]
