@@ -1,4 +1,13 @@
-.card {
+.quote-container {
+  margin: 1.5rem 2.5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-gap: 10px;
+}
+
+.qcard {
   width: 250px;
   background-color: #f2f2f2;
   border-radius: 10px;
@@ -7,19 +16,19 @@
   margin-bottom: 20px;
 }
 
-.card p {
+.qcard p {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 10px;
 }
 
-.card span {
+.qcard span {
   font-style: italic;
   font-size: 14px;
   color: #666;
 }
 
-.card .author {
+.qcard .author {
   font-weight: bold;
   text-align: right;
   margin-top: 10px;

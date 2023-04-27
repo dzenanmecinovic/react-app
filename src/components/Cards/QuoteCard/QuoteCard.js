@@ -3,10 +3,12 @@ import "./QuoteCard.css";
 
 const QuoteCard = ({ author, content }) => {
   return (
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">{author}</h5>
-        <p className="card-text">{content}</p>
+    <div className="quote-container">
+      <div className="qcard">
+        <div className="qcard-body">
+          <h5 className="qcard-title">{author}</h5>
+          <p className="qcard-text">{content}</p>
+        </div>
       </div>
     </div>
   );

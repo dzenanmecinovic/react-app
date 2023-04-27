@@ -33,6 +33,18 @@ function Navbar(props) {
       >
         <h2 style={{ fontFamily: "Arial" }}>Booking</h2>
       </NavLink>
+      <NavLink
+        to={"/league"}
+        style={({ isActive }) => (isActive ? acitveStyles : styles)}
+      >
+        <h2 style={{ fontFamily: "Arial" }}>Premier League</h2>
+      </NavLink>
+      <NavLink
+        to={"/quotes"}
+        style={({ isActive }) => (isActive ? acitveStyles : styles)}
+      >
+        <h2 style={{ fontFamily: "Arial" }}>Quotes</h2>
+      </NavLink>
     </header>
   );
 }

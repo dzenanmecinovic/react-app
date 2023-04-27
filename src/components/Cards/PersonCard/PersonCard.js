@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 
 export default function PersonCard(props) {
   return (
-    <div className="card">
+    <div className="pcard">
       <div className="firstPart">
         <img src={props.imageURL} alt={"profile_img"} className="img" />
         <h3>{props.fullName}</h3>

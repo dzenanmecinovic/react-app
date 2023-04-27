@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Greeting from "./components/Greetings/Greeting";
+// import Greeting from "./components/Greetings/Greeting";
 import { Navbar } from "./components/Navbar/Navbar";
 import PersonCard from "./components/Cards/PersonCard/PersonCard";
 import persons from "./common/persons.json";
@@ -12,6 +12,7 @@ import TeamCard from "./components/Cards/TeamCard/TeamCard";
 import QuoteCard from "./components/Cards/QuoteCard/QuoteCard";
 import Pagination from "./components/Pagination/Pagination";
 import { Route, Routes } from "react-router-dom";
+import { Error } from "./components/Error 404/Error";
 
 const poruke = [
   "Danas je subota",
@@ -28,7 +29,7 @@ function App() {
   // const [count, setCount] = React.useState(0);
   const [count, setCount] = useState(0);
   const [arr, setArr] = useState(poruke);
-  // setCount je metoda pomocu koje menjamo vrednost count state_a:
+  // setCount je metoda pomocu koje menjamo vrednost count state-a:
   const increaseCount = () => {
     setCount(count + 1);
   };
@@ -74,136 +75,7 @@ function App() {
   }, [page]);
 
   return (
-    //  React.createElement("p", {}, "Neki paragraf");
     <>
-      {" "}
-      {/* Fragment - najcesce se koristi za wrappovanje */}
-      {/* <div className="App"> */}
-      {/* <Navbar><p>Samo za primer</p></Navbar>
-        <Greeting appName={"Our First App"} username={"Bakir Ujkanovic"} /> */}
-      {/* <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 250px)",
-            justifyContent: "center",
-            gridAutoRows: "minmax(420px, auto)",
-            gridGap: "40px",
-          }}
-        > */}
-      {/* <PersonCard
-            imageURL={"https://avatars.githubusercontent.com/u/89378479?v=4"}
-            fullName={"Dzenan Kosuta"}
-            location={"Novi pazar, Serbia"}
-            description={
-              "Dženan is a mathematician, and he work's in center NIT as a Webdeveloper"
-            }
-            goToRepositories={
-              "https://github.com/dzenankosuta?tab=repositories"
-            }
-          />
-          <PersonCard
-            imageURL={"https://avatars.githubusercontent.com/u/111905831?v=4"}
-            fullName={"Alen Muslic"}
-            location={"Novi pazar, Serbia"}
-            description={"Alen is rising Web developer..."}
-            goToRepositories={"https://github.com/alenmuslic?tab=repositories"}
-          />
-          <PersonCard
-            imageURL={
-              "https://www.borisradivojkov.com/assets/images/profesionalni-poslovni-portret-rukovodioca-600x600.jpg"
-            }
-            fullName={"Aladin Zecic"}
-            location={"Novi pazar, Serbia"}
-            description={"Aladin is rising Web developer..."}
-            goToRepositories={"https://github.com/aladinzecic?tab=repositories"}
-          />
-          <PersonCard
-            imageURL={"https://avatars.githubusercontent.com/u/111905979?v=4"}
-            fullName={"Haris Muslic"}
-            location={"Novi pazar, Serbia"}
-            description={"Haris is rising Web developer..."}
-            goToRepositories={
-              "https://github.com/harismuslic04?tab=repositories"
-            }
-          /> */}
-      {/* {persons.map((person) => (
-            <PersonCard
-              key={person.id}
-              imageURL={person.imageURL}
-              fullName={person.fullName}
-              location={person.location}
-              description={person.description}
-              goToRepositories={person.goToRepositories}
-            />
-          ))} */}
-      {/* <div>
-            <button style={{ width: "40px" }} onClick={decreaseCount}>
-              -
-            </button>
-            <p>{count}</p>
-            <button
-              style={{ width: "40px" }}
-              onClick={() => {
-                console.log("povecanje");
-                setCount(count + 1);
-              }}
-            >
-              +
-            </button>
-          </div> */}
-      {/* </div> */}
-      {/* <div className="hotels">
-          {hotels.map((hotel) => (
-            <HotelCard
-              key={hotel.id}
-              imageURL={hotel.imageURL}
-              name={hotel.name}
-              stars={hotel.stars}
-              description={hotel.description}
-              rating={hotel.rating}
-              reviews={hotel.reviews}
-            />
-          ))}
-        </div> */}
-      {/* <Form /> */}
-      {/* <div
-          style={{
-            height: "200px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "10px",
-          }}
-        >
-          <button
-            onClick={() => {
-              reverseArr();
-              console.log("okrenuo se niz");
-            }}
-          >
-            Promeni raspored poruka
-          </button>
-          {arr.map((poruka) => (
-            <p>{poruka}</p>
-          ))}
-        </div> */}
-      {/* {teams.map((team) => (
-          <TeamCard
-            key={team.id}
-            name={team.name}
-            matches={team.matches}
-            points={team.points}
-            deleteTeam={() => deleteTeam(team.id)}
-          />
-        ))} */}
-      {/* <div className="quote-container">
-          {quotes.map((quote) => (
-            <QuoteCard author={quote.author} content={quote.content} />
-          ))}
-        </div> */}
-      {/* <Pagination currentPage={page} handlePageClick={handlePageClick} /> */}
-      {/* </div> */}
       <Navbar />
       <Routes>
         <Route index element={<Login />} />
@@ -251,22 +123,45 @@ function App() {
           }
         />
         <Route
-          path="*"
+          path="/league"
           element={
-            <div className="error">
-              <h1
+            <>
+              <h2
                 style={{
-                  fontSize: "10rem",
-                  color: "red",
                   textAlign: "center",
-                  marginTop: "5rem",
+                  paddingTop: "5rem",
+                  fontSize: "2.2rem",
+                  color: "#252525",
+                  textDecoration: "underline",
                 }}
               >
-                Error 404
-              </h1>
+                Table
+              </h2>
+              <div className="league">
+                {teams.map((team) => (
+                  <TeamCard
+                    key={team.id}
+                    name={team.name}
+                    matches={team.matches}
+                    points={team.points}
+                    deleteTeam={() => deleteTeam(team.id)}
+                  />
+                ))}
+              </div>
+            </>
+          }
+        />
+        <Route
+          path="/quotes"
+          element={
+            <div className="quote-container">
+              {quotes.map((quote) => (
+                <QuoteCard author={quote.author} content={quote.content} />
+              ))}
             </div>
           }
         />
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );
