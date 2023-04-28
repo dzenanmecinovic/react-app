@@ -1,6 +1,6 @@
 import React from "react";
 import "./QuoteCard.css";
-
+import Pagination from "../../Pagination/Pagination";
 const QuoteCard = ({ author, content }) => {
   return (
     <div className="quote-container">
@@ -13,5 +13,4 @@ const QuoteCard = ({ author, content }) => {
     </div>
   );
 };
-
 export default QuoteCard;
