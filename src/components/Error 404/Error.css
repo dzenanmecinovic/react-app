@@ -17,20 +17,20 @@ img {
   padding-top: 4rem;
   font-size: 3rem;
   position: relative;
-  animation: move 3.5s infinite alternate;
+  animation: move 6.5s infinite alternate both ease-in-out;
 }
 
 @keyframes move {
   0% {
-    left: -55px;
+    left: -145px;
   }
   35% {
-    left: 55px;
+    left: 145px;
   }
   70% {
-    left: -55px;
+    left: -145px;
   }
   100% {
-    left: 55px;
+    left: 145px;
   }
 }
