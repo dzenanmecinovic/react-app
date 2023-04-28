@@ -10,7 +10,7 @@ import HotelCard from "./components/Cards/HotelCard/HotelCard";
 import Login from "./components/Login/Login";
 import TeamCard from "./components/Cards/TeamCard/TeamCard";
 import QuoteCard from "./components/Cards/QuoteCard/QuoteCard";
-// import Pagination from "./components/Pagination/Pagination";
+import Pagination from "./components/Pagination/Pagination";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error 404/Error";
 
@@ -22,6 +22,8 @@ const poruke = [
   "Subota je dan za druzenje",
   "Subota je dan za kafu",
 ];
+
+export const BASE_URL = "https://api.quotable.io";
 
 function App() {
   // const [count, setCount] = React.useState(0);
@@ -50,10 +52,8 @@ function App() {
     const filteredTeams = teams.filter((team) => team.id !== id);
     setTeams(filteredTeams);
   };
-
-  const BASE_URL = "https://api.quotable.io";
   const [quotes, setQuotes] = useState([]);
-  const [page, setPage] = useState(5);
+  const [page, setPage] = useState(10);
   const handlePageClick = (pageNumber) => {
     setPage(pageNumber);
   };
@@ -64,13 +64,10 @@ function App() {
     const results = data.results;
 
     setQuotes(results);
-    console.log(results);
   };
 
-  console.log(quotes[0]?.content);
-
   useEffect(() => {
-    getQuotes(50);
+    getQuotes(10);
   }, [page]);
 
   return (

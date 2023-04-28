@@ -2,31 +2,31 @@
   {
     "id": 1,
     "name": "Arsenal",
-    "points": 72,
+    "points": 75,
     "matches": 30
   },
   {
     "id": 2,
     "name": "Man City",
-    "points": 64,
+    "points": 73,
     "matches": 30
   },
   {
     "id": 3,
     "name": "Newcastle",
-    "points": 56,
+    "points": 62,
     "matches": 31
   },
   {
     "id": 4,
     "name": "Liverpool",
-    "points": 51,
+    "points": 56,
     "matches": 29
   },
   {
     "id": 5,
     "name": "Man United",
-    "points": 48,
+    "points": 51,
     "matches": 31
   }
 ]
