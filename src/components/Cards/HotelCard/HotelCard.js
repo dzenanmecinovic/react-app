@@ -3,7 +3,9 @@ import "./HotelCard.css";
 
 export default function HotelCard(props) {
   const oneStar = <span>⭐</span>;
-  const halfStar = <span style={{ color: "yellow" }}>✩</span>;
+  const halfStar = (
+    <span style={{ color: "yellow", backgroundColor: "#252525" }}>✩</span>
+  );
   const stars = (num) => {
     const arr = [];
     for (let i = 1; i <= num; i++) {
@@ -43,14 +45,7 @@ export default function HotelCard(props) {
         <img src={props.imageURL} alt={"profile_img"} className="hotelimg" />
         <div>
           <p className="hotelname">{props.name}</p>
-          <h3
-            style={{
-              background:
-                rating < 7 ? "orange" : rating < 9 ? "yellow" : "green",
-            }}
-          >
-            {stars(props.stars)}
-          </h3>
+          <h3>{stars(props.stars)}</h3>
           <p className="hoteldesc">{props.description}</p>
           <p>
             <span className="hotelrat"> {props.rating} </span>
