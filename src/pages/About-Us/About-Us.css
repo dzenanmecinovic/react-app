@@ -1,4 +1,5 @@
 .about-us-container {
+  height: 78.5vh;
   display: grid;
   grid-template-columns: repeat(4, 250px);
   justify-content: center;

@@ -1,7 +1,9 @@
 .formContainer {
+  height: 60vh;
   width: 80%;
   margin-left: 35%;
   margin-top: 10%;
+  overflow: hidden;
 }
 
 .formContainer h3 {

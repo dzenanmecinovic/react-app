@@ -1,17 +1,17 @@
 import React from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import "./Spinner.css";
+import { MoonLoader } from "react-spinners";
 
 export default function Spinner({ message }) {
   return (
-    <div>
-      <ClipLoader
+    <div id="loader">
+      <MoonLoader
         color={"#000"}
         loading={true}
-        cssOverride={{ display: "block", margin: "0 auto", borderColor: "red" }}
         size={150}
         aria-label={message}
         data-testid="loader"
-      />
+      ></MoonLoader>
     </div>
   );
 }

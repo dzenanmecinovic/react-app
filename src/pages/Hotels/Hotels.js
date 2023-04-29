@@ -1,12 +1,14 @@
 import React from "react";
-import hotels from "../../common/hotels.json";
+import hotelsJSON from "../../common/hotels.json";
 import HotelCard from "../../components/Cards/HotelCard/HotelCard";
+import "./Hotels.css";
+import Footer from "../../components/Footer/Footer";
 
 export default function Hotels() {
   return (
     <div>
       <div className="hotels">
-        {hotels.map((hotel) => (
+        {hotelsJSON.map((hotel) => (
           <HotelCard
             key={hotel.id}
             imageURL={hotel.imageURL}
