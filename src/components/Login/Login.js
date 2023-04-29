@@ -23,7 +23,7 @@ function Form() {
           console.log(userInput);
         }}
       >
-        <label htmlFor="email">Unesite email adresu</label>
+        <label htmlFor="email">Enter email-address</label>
         <input
           type="email"
           id="email"
@@ -40,7 +40,7 @@ function Form() {
         <br />
         <br />
 
-        <label htmlFor="password">Unesite password </label>
+        <label htmlFor="password">Enter password </label>
         <input
           type="password"
           id="pass"
@@ -55,7 +55,7 @@ function Form() {
         />
         <br />
         <br />
-        <button type="submit">Potvrdi</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

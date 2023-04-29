@@ -2,8 +2,9 @@
   margin-top: 2rem;
   display: flex;
   list-style: none;
+  justify-content: center;
 }
 
 .page-link {
-  width: 3vw;
+  width: 4vw;
 }

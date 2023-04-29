@@ -13,37 +13,13 @@ import QuoteCard from "./components/Cards/QuoteCard/QuoteCard";
 import Pagination from "./components/Pagination/Pagination";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error 404/Error";
-
-const poruke = [
-  "Danas je subota",
-  "U subotu je lepo vreme",
-  "Subota je dan za odmor",
-  "Subota je dan za kupovinu",
-  "Subota je dan za druzenje",
-  "Subota je dan za kafu",
-];
+import AboutUs from "./pages/About-Us/About-Us";
+import HotelsComponent from "./pages/Hotels/Hotels";
+import Hotels from "./pages/Hotels/Hotels";
 
 export const BASE_URL = "https://api.quotable.io";
 
 function App() {
-  // const [count, setCount] = React.useState(0);
-  const [count, setCount] = useState(0);
-  const [arr, setArr] = useState(poruke);
-  // setCount je metoda pomocu koje menjamo vrednost count state-a:
-  const increaseCount = () => {
-    setCount(count + 1);
-  };
-  const decreaseCount = () => {
-    setCount(count - 1);
-  };
-  // const x = 10;
-
-  const reverseArr = () => {
-    const _arr = [...arr];
-    const reversed = _arr.reverse();
-    setArr(reversed);
-  };
-
   const [teams, setTeams] = useState(teamsJSON);
   console.log(teams);
 
@@ -75,49 +51,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route index element={<Login />} />
-        <Route
-          path="/about-us"
-          element={
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(4, 250px)",
-                justifyContent: "center",
-                gridAutoRows: "minmax(420px, auto)",
-                gridGap: "40px",
-              }}
-            >
-              {persons.map((person) => (
-                <PersonCard
-                  key={person.id}
-                  imageURL={person.imageURL}
-                  fullName={person.fullName}
-                  location={person.location}
-                  description={person.description}
-                  goToRepositories={person.goToRepositories}
-                />
-              ))}
-            </div>
-          }
-        />
-        <Route
-          path="/booking"
-          element={
-            <div className="hotels">
-              {hotels.map((hotel) => (
-                <HotelCard
-                  key={hotel.id}
-                  imageURL={hotel.imageURL}
-                  name={hotel.name}
-                  stars={hotel.stars}
-                  description={hotel.description}
-                  rating={hotel.rating}
-                  reviews={hotel.reviews}
-                />
-              ))}
-            </div>
-          }
-        />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/booking" element={<Hotels />} />
         <Route
           path="/league"
           element={
@@ -150,11 +85,19 @@ function App() {
         <Route
           path="/quotes"
           element={
-            <div className="quote-container">
-              {quotes.map((quote) => (
-                <QuoteCard author={quote.author} content={quote.content} />
-              ))}
-            </div>
+            <>
+              <div className="quote-container">
+                {quotes.map((quote) => (
+                  <QuoteCard author={quote.author} content={quote.content} />
+                ))}
+              </div>
+              <div>
+                <Pagination
+                  currentPage={page}
+                  handlePageClick={handlePageClick}
+                />
+              </div>
+            </>
           }
         />
         <Route path="*" element={<Error />} />
