@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 
-function Form() {
+export default function Form() {
   // 1. nacin - za svako input polje poseban state
   // const [name, setName] = useState("");
   // const [lastName, setLastName] = useState("");
@@ -60,5 +60,3 @@ function Form() {
     </div>
   );
 }
-
-export default Form;

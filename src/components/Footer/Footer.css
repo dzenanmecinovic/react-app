@@ -1,7 +1,11 @@
 .footer {
-  height: 6.5vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5.5vh;
   background-color: #33bd8f;
   font-size: 1.2rem;
+  padding-top: 0.65rem;
   text-align: center;
-  padding-top: 0.75rem;
 }
