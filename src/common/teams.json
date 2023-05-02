@@ -3,30 +3,35 @@
     "id": 1,
     "name": "Arsenal",
     "points": 75,
-    "matches": 30
+    "matches": 30,
+    "information": "Treci najuspesniji klub u Engleskoj."
   },
   {
     "id": 2,
     "name": "Man City",
     "points": 73,
-    "matches": 30
+    "matches": 30,
+    "information": "Tim koji je osnovan 2009. godine."
   },
   {
     "id": 3,
     "name": "Newcastle",
     "points": 62,
-    "matches": 31
+    "matches": 31,
+    "information": "Klub sa najvise zutih kartona u tekucoj sezoni."
   },
   {
     "id": 4,
     "name": "Liverpool",
     "points": 56,
-    "matches": 29
+    "matches": 29,
+    "information": "Najuspesniji klub u Engleskoj."
   },
   {
     "id": 5,
     "name": "Man United",
     "points": 51,
-    "matches": 31
+    "matches": 31,
+    "information": "Drugi najuspesniji klub u Engleskoj."
   }
 ]

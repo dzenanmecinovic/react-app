@@ -5,6 +5,7 @@ import "./League.css";
 
 export default function League() {
   const [teams, setTeams] = useState(teamsJSON);
+  const [extended, setExtended] = useState(null);
   console.log(teams);
 
   const deleteTeam = (id) => {
@@ -22,6 +23,10 @@ export default function League() {
             matches={team.matches}
             points={team.points}
             deleteTeam={() => deleteTeam(team.id)}
+            extended={extended}
+            setExtended={setExtended}
+            information={team.information}
+            id={team.id}
           />
         ))}
       </div>

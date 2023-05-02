@@ -9,6 +9,7 @@ import Hotels from "./pages/Hotels/Hotels";
 import League from "./pages/League/League";
 import Quotes from "./pages/Quotes/Quotes";
 import Footer from "./components/Footer/Footer";
+import Hotel from "./pages/Hotels/Hotel/Hotel";
 
 export const BASE_URL = "https://api.quotable.io";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/booking" element={<Hotels />} />
         <Route path="/league" element={<League />} />
         <Route path="/quotes" element={<Quotes />} />
+        <Route path="/hotel:id" element={<Hotel />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
