@@ -19,7 +19,19 @@ function Navbar() {
         to={"/"}
         style={({ isActive }) => (isActive ? activeStyles : styles)}
       >
+        <h2 style={{ fontFamily: "Arial" }}>Home</h2>
+      </NavLink>
+      <NavLink
+        to={"/login"}
+        style={({ isActive }) => (isActive ? activeStyles : styles)}
+      >
         <h2 style={{ fontFamily: "Arial" }}>Login</h2>
+      </NavLink>
+      <NavLink
+        to={"/register"}
+        style={({ isActive }) => (isActive ? activeStyles : styles)}
+      >
+        <h2 style={{ fontFamily: "Arial" }}>Register</h2>
       </NavLink>
       <NavLink
         to={"/about-us"}

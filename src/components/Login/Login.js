@@ -11,6 +11,7 @@ export default function Form() {
 
   // 2. jedan state za sva input polja
   const [userInput, setUserInput] = useState({
+    username: "",
     email: "",
     password: "",
   });
@@ -23,6 +24,19 @@ export default function Form() {
           console.log(userInput);
         }}
       >
+        <label htmlFor="username">Enter username</label>
+        <input
+          type="username"
+          id="username"
+          name="username"
+          value={userInput.username}
+          onChange={(e) => {
+            setUserInput((prev) => ({
+              ...prev,
+              username: e.target.value,
+            }));
+          }}
+        ></input>
         <label htmlFor="email">Enter email-address</label>
         <input
           type="email"
@@ -39,7 +53,6 @@ export default function Form() {
         />
         <br />
         <br />
-
         <label htmlFor="password">Enter password </label>
         <input
           type="password"
