@@ -12,9 +12,9 @@ export function Login() {
         data
       );
       const userInfo = await user.data;
-      console.log(userInfo);
+      return userInfo;
     } catch (err) {
-      setErrorMsg(`${err.message}`);
+      setErrorMsg(`Greska: ${err.response.data.err}`);
     }
   }
 
@@ -49,8 +49,8 @@ export function Login() {
         <label className="label">Password</label>
         <input
           className="input"
-          type="password "
-          name="password "
+          type="password"
+          name="password"
           placeholder="Password"
           required
           value={password}

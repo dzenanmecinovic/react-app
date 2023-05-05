@@ -14,7 +14,7 @@ export function Register() {
       const regInfo = await reg.data;
       console.log(regInfo);
     } catch (err) {
-      setErrorMsg(`${err.message}`);
+      setErrorMsg(`${err.response.data.err}`);
     }
   }
 
