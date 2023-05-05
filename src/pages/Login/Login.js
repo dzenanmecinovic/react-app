@@ -3,16 +3,18 @@ import "./Login.css";
 import axios from "axios";
 
 export function Login() {
-  async function LoginSystem(data) {
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function loginSystem(data) {
     try {
       const user = await axios.post(
         "https://nit-backend.onrender.com/users/login",
         data
       );
-      const userInfo = await user.data();
+      const userInfo = await user.data;
       console.log(userInfo);
     } catch (err) {
-      console.log(err);
+      setErrorMsg(`${err.message}`);
     }
   }
 
@@ -21,7 +23,7 @@ export function Login() {
 
   function handleClick(e) {
     e.preventDefault();
-    LoginSystem({
+    loginSystem({
       email,
       password,
     });
@@ -30,7 +32,8 @@ export function Login() {
   return (
     <div className="cointener">
       <form>
-        <h1>Login</h1>
+        <h1 id="loginHeading">Login</h1>
+        {errorMsg && <p id="errorMsg">{errorMsg}</p>}
         <label className="label">Email</label>
         <input
           className="input"
