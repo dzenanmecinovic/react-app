@@ -19,7 +19,10 @@ const Pagination = ({ currentPage, handlePageClick, totalPages }) => {
             className={`page-link ${
               currentPage === pageNumber ? "active" : ""
             }`}
-            onClick={() => handlePageClick(pageNumber)}
+            onClick={(e) => {
+              e.preventDefault();
+              handlePageClick(pageNumber);
+            }}
           >
             {pageNumber}
           </button>
