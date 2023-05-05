@@ -9,8 +9,9 @@ import League from "./pages/League/League";
 import Quotes from "./pages/Quotes/Quotes";
 import Footer from "./components/Footer/Footer";
 import Hotel from "./pages/Hotels/Hotel/Hotel";
-import { Loginn } from "./pages/Loginn/Loginn";
+import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
+import Home from "./components/Home/Home";
 
 export const BASE_URL = "https://api.quotable.io";
 
@@ -19,8 +20,8 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route index />
-        <Route path="/login" element={<Loginn />} />
+        <Route index element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/booking" element={<Hotels />} />

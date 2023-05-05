@@ -1,5 +1,6 @@
 .pagination {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding-bottom: 5rem;
   display: flex;
   list-style: none;
   justify-content: center;

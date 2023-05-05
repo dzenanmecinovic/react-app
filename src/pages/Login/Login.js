@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./Loginn.css";
+import "./Login.css";
 import axios from "axios";
 
-export function Loginn() {
-  async function Login(data) {
+export function Login() {
+  async function LoginSystem(data) {
     try {
       const user = await axios.post(
         "https://nit-backend.onrender.com/users/login",
@@ -15,18 +15,18 @@ export function Loginn() {
       console.log(err);
     }
   }
-  const [userInput, setUserInput] = useState({
-    email: "",
-    password: "",
-  });
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function handleClick(e) {
     e.preventDefault();
-    Login({
+    LoginSystem({
       email,
       password,
     });
   }
+
   return (
     <div className="cointener">
       <form>
@@ -35,9 +35,9 @@ export function Loginn() {
         <input
           className="input"
           type="email"
-          value={userInput.email}
+          value={email}
           onChange={(e) => {
-            setUserInput(e.target.value);
+            setEmail(e.target.value);
           }}
           placeholder="Email"
           name="email"
@@ -50,9 +50,9 @@ export function Loginn() {
           name="password "
           placeholder="Password"
           required
-          value={userInput.password}
+          value={password}
           onChange={(e) => {
-            setUserInput(e.target.value);
+            setPassword(e.target.value);
           }}
         ></input>
         <button id="login" onClick={handleClick}>
