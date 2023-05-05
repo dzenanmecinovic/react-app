@@ -56,7 +56,7 @@ export default function HotelCard(props) {
           {/* {showRecomendation && <p>Recomendation</p>} */}
           {/* 2. nacin uslovnog prikazivanja (Conditional rendering) */}
           {showRecomendation ? <p>Recomendation</p> : <></>}
-          <button>Book</button>
+          <button id="booking">Book</button>
         </div>
       </div>
     </div>
