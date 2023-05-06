@@ -15,7 +15,3 @@ input {
   padding: 0 10px;
   outline: none;
 }
-#errorMsg {
-  color: red;
-  text-shadow: 0 0 15px black;
-}

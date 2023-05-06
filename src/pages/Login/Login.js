@@ -1,22 +1,21 @@
 import { useState } from "react";
 import "./Login.css";
 import axios from "axios";
+import { BASE_URL } from "../../config/api";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
-  const [errorMsg, setErrorMsg] = useState("");
-  const [loginSuccess, setLoginSuccess] = useState("");
+  const navigation = useNavigate();
 
   async function loginSystem(data) {
     try {
-      const user = await axios.post(
-        "https://nit-backend.onrender.com/users/login",
-        data
-      );
+      const user = await axios.post(`${BASE_URL}/users/login`, data);
       const userInfo = await user.data;
       console.log(userInfo);
-      setLoginSuccess("Uspesno ste se ulogovali !");
+      localStorage.setItem("token", JSON.stringify(userInfo.token));
+      navigation("/");
     } catch (err) {
-      setErrorMsg(`Greska: ${err.response.data.err}`);
+      localStorage.removeItem("token");
     }
   }
 
@@ -35,11 +34,6 @@ export function Login() {
     <div className="cointener">
       <form>
         <h1 id="loginHeading">Login</h1>
-        {errorMsg ? (
-          <p id="errorMsg">{errorMsg}</p>
-        ) : (
-          <p id="successMsg">{loginSuccess}</p>
-        )}
         <label className="label">Email</label>
         <input
           className="input"
@@ -64,7 +58,7 @@ export function Login() {
             setPassword(e.target.value);
           }}
         ></input>
-        <button id="login" onClick={handleClick}>
+        <button onClick={handleClick} id="reg">
           Login
         </button>
       </form>

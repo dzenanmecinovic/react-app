@@ -18,14 +18,11 @@ export default function Quotes() {
     const results = data.results;
 
     setQuotes(results);
-    console.log(results);
   };
-
-  console.log(quotes[0]?.content);
 
   useEffect(() => {
     getQuotes();
-  }, [page]);
+  });
   return (
     <>
       {quotes.length > 0 ? (

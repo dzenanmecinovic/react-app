@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error 404/Error";
+import Home from "./components/Home/Home";
 import AboutUs from "./pages/About-Us/About-Us";
 import Hotels from "./pages/Hotels/Hotels";
 import League from "./pages/League/League";
@@ -11,7 +12,6 @@ import Footer from "./components/Footer/Footer";
 import Hotel from "./pages/Hotels/Hotel/Hotel";
 import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
-import Home from "./components/Home/Home";
 
 export const BASE_URL = "https://api.quotable.io";
 

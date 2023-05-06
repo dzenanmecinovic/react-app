@@ -48,19 +48,9 @@ button {
   cursor: pointer;
   outline: none;
 }
-button:hover {
-  color: aqua;
-}
 button:active {
   transform: scale(0.95);
 }
-
-#errorMsg {
-  color: red;
-  text-shadow: 0 0 15px black;
-}
-
-#successMsg {
-  color: rgb(7, 133, 7);
-  text-shadow: 0 0 15px black;
+#reg:hover {
+  color: #33bd8f;
 }
