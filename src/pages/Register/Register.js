@@ -16,7 +16,7 @@ export function Register() {
       console.log(regInfo);
       setRegisterSuccess("Uspesno ste se registrovali !");
     } catch (err) {
-      setErrorMsg(`${err.response.data.err}`);
+      setErrorMsg(`Greska: ${err.response.data.err}`);
     }
   }
 

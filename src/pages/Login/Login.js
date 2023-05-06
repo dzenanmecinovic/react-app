@@ -14,7 +14,7 @@ export function Login() {
       );
       const userInfo = await user.data;
       console.log(userInfo);
-      setLoginSuccess("Uspenso ste se ulogovali !");
+      setLoginSuccess("Uspesno ste se ulogovali !");
     } catch (err) {
       setErrorMsg(`Greska: ${err.response.data.err}`);
     }
