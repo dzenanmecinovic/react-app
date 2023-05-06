@@ -4,6 +4,7 @@ import axios from "axios";
 
 export function Register() {
   const [errorMsg, setErrorMsg] = useState("");
+  const [registerSuccess, setRegisterSuccess] = useState("");
 
   async function RegSystem(data) {
     try {
@@ -13,6 +14,7 @@ export function Register() {
       );
       const regInfo = await reg.data;
       console.log(regInfo);
+      setRegisterSuccess("Uspesno ste se registrovali !");
     } catch (err) {
       setErrorMsg(`${err.response.data.err}`);
     }
@@ -31,7 +33,11 @@ export function Register() {
     <div className="rCointener">
       <form>
         <h1>Register</h1>
-        {errorMsg && <p id="errorMsg">{errorMsg}</p>}
+        {errorMsg ? (
+          <p id="errorMsg">{errorMsg}</p>
+        ) : (
+          <p id="successMsg">{registerSuccess}</p>
+        )}
         <label>Username</label>
         <input
           className="rInput"

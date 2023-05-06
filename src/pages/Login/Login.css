@@ -59,3 +59,8 @@ button:active {
   color: red;
   text-shadow: 0 0 15px black;
 }
+
+#successMsg {
+  color: rgb(7, 133, 7);
+  text-shadow: 0 0 15px black;
+}

@@ -4,6 +4,7 @@ import axios from "axios";
 
 export function Login() {
   const [errorMsg, setErrorMsg] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState("");
 
   async function loginSystem(data) {
     try {
@@ -12,7 +13,8 @@ export function Login() {
         data
       );
       const userInfo = await user.data;
-      return userInfo;
+      console.log(userInfo);
+      setLoginSuccess("Uspenso ste se ulogovali !");
     } catch (err) {
       setErrorMsg(`Greska: ${err.response.data.err}`);
     }
@@ -33,7 +35,11 @@ export function Login() {
     <div className="cointener">
       <form>
         <h1 id="loginHeading">Login</h1>
-        {errorMsg && <p id="errorMsg">{errorMsg}</p>}
+        {errorMsg ? (
+          <p id="errorMsg">{errorMsg}</p>
+        ) : (
+          <p id="successMsg">{loginSuccess}</p>
+        )}
         <label className="label">Email</label>
         <input
           className="input"
