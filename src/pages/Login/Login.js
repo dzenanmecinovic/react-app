@@ -3,10 +3,8 @@ import "./Login.css";
 import axios from "axios";
 import { BASE_URL } from "../../config/api";
 import { useNavigate } from "react-router-dom";
-
 export function Login() {
   const navigation = useNavigate();
-
   async function loginSystem(data) {
     try {
       const user = await axios.post(`${BASE_URL}/users/login`, data);
