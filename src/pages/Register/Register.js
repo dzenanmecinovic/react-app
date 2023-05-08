@@ -12,6 +12,7 @@ export function Register() {
       const regInfo = await reg.data;
       console.log(regInfo);
       localStorage.setItem("email", data.email);
+      setIsSuccess(true);
     } catch (err) {
       setMsg(`Greska: ${err.response.data.err}`);
       setIsSuccess(false);
@@ -41,50 +42,7 @@ export function Register() {
         <p>Uspesno</p>
       ) : (
         <div className="rCointener">
-          {isSuccess ? (
-            <form>
-              <h1>Register</h1>
-              <label>Username</label>
-              <input
-                className="rInput"
-                type="name"
-                placeholder="Username"
-                name="name"
-                required
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              ></input>
-              <label>E-mail</label>
-              <input
-                type="email"
-                className="rInput"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                placeholder="Enter Email"
-                name="email"
-                required
-              ></input>
-              <label>Password</label>
-              <input
-                placeholder="Enter Password"
-                className="rInput"
-                type="password"
-                name="password"
-                required
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              ></input>
-              <button onClick={handleClick} id="reg">
-                Register
-              </button>
-            </form>
-          ) : (
+          {!isSuccess && (
             <form>
               <h1>Register</h1>
               <p id="msg">{Msg}</p>
