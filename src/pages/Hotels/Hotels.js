@@ -4,7 +4,7 @@ import HotelCard from "../../components/Cards/HotelCard/HotelCard";
 
 export default function Hotels() {
   return (
-    <div>
+    <div className="hotelsGridMargin">
       <div className="hotels">
         {hotelsJSON.map((hotel) => (
           <HotelCard

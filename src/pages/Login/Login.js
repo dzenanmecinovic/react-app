@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Login.css";
 import axios from "axios";
 import { BASE_URL } from "../../config/api";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../context/AppContext";
+
 export function Login() {
   const [Msg, setMsg] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [prikaz, setPrikaz] = useState(false);
   const navigation = useNavigate();
+  const { setToken } = useContext(AppContext);
 
   async function loginSystem(data) {
     try {
@@ -16,10 +19,12 @@ export function Login() {
       const userInfo = await user.data;
       console.log(userInfo);
       localStorage.setItem("token", JSON.stringify(userInfo.token));
+      setToken(userInfo.token);
       setPrikaz(true);
     } catch (err) {
       setMsg(`Greska: ${err.response.data.err}`);
       localStorage.removeItem("token");
+      setToken(null);
     }
   }
 
@@ -43,7 +48,6 @@ export function Login() {
       {prikaz ? (
         navigation("/")
       ) : (
-        // window.location.replace("localhost:3000/")
         <div className="cointener">
           <form>
             <h1 id="loginHeading">Login</h1>

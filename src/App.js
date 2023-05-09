@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
@@ -12,15 +12,17 @@ import Footer from "./components/Footer/Footer";
 import Hotel from "./pages/Hotels/Hotel/Hotel";
 import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
+import { AppContext } from "./context/AppContext";
 
 export const BASE_URL = "https://api.quotable.io";
 
 function App() {
+  const { token, setToken } = useContext(AppContext);
   return (
     <>
       <Navbar />
       <Routes>
-        <Route index element={<Home />} />
+        <Route index element={token ? <League /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-us" element={<AboutUs />} />

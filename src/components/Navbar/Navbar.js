@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import { AppContext } from "../../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const changeView = localStorage.getItem("token");
+  const { token, setToken } = useContext(AppContext);
+  const navigation = useNavigate();
+  const batn = function () {
+    localStorage.removeItem("token");
+    setToken(null);
+    navigation("/login");
+  };
   const activeStyles = {
     backgroundColor: "#252525",
     color: "#fff",
@@ -14,10 +22,12 @@ export default function Navbar() {
     textDecoration: "none",
     color: "black",
   };
+
+  useEffect(() => {}, [token]);
   return (
-    <>
-      {changeView ? (
-        <header className="header">
+    <header className="header">
+      {token ? (
+        <>
           <NavLink
             to={"/"}
             style={({ isActive }) => (isActive ? activeStyles : styles)}
@@ -48,9 +58,18 @@ export default function Navbar() {
           >
             <h2 style={{ fontFamily: "Arial" }}>Quotes</h2>
           </NavLink>
-        </header>
+          <button style={{ width: "fit-content" }} onClick={batn}>
+            Logout
+          </button>
+        </>
       ) : (
-        <header className="header">
+        <>
+          <NavLink
+            to={"/"}
+            style={({ isActive }) => (isActive ? activeStyles : styles)}
+          >
+            <h2 style={{ fontFamily: "Arial" }}>Home</h2>
+          </NavLink>
           <NavLink
             to={"/login"}
             style={({ isActive }) => (isActive ? activeStyles : styles)}
@@ -63,8 +82,8 @@ export default function Navbar() {
           >
             <h2 style={{ fontFamily: "Arial" }}>Register</h2>
           </NavLink>
-        </header>
+        </>
       )}
-    </>
+    </header>
   );
 }
