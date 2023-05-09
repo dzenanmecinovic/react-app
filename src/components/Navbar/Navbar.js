@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  const [Registered, setRegistered] = useState(false);
+  const changeView = localStorage.getItem("token");
   const activeStyles = {
     backgroundColor: "#252525",
     color: "#fff",
@@ -16,25 +16,13 @@ export default function Navbar() {
   };
   return (
     <>
-      {Registered ? (
+      {changeView ? (
         <header className="header">
           <NavLink
             to={"/"}
             style={({ isActive }) => (isActive ? activeStyles : styles)}
           >
             <h2 style={{ fontFamily: "Arial" }}>Home</h2>
-          </NavLink>
-          <NavLink
-            to={"/login"}
-            style={({ isActive }) => (isActive ? activeStyles : styles)}
-          >
-            <h2 style={{ fontFamily: "Arial" }}>Login</h2>
-          </NavLink>
-          <NavLink
-            to={"/register"}
-            style={({ isActive }) => (isActive ? activeStyles : styles)}
-          >
-            <h2 style={{ fontFamily: "Arial" }}>Register</h2>
           </NavLink>
           <NavLink
             to={"/about-us"}
