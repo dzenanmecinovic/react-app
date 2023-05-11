@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function AboutUs() {
   const token = localStorage.getItem("token");
-  const [users, setUsers] = useState([]);
+  const [korisnici, setKorisnici] = useState([]);
 
   async function getUsers() {
     try {
@@ -18,26 +18,27 @@ export default function AboutUs() {
         },
       });
       const usersData = await users.data;
-      console.log(token);
-      console.log(usersData);
+      setKorisnici(usersData);
     } catch (err) {
       console.log(err);
-      console.log(token);
     }
   }
   useEffect(() => {
     getUsers();
   }, []);
+  if (!Array.isArray(korisnici)) {
+    return <p>Nije validan format</p>;
+  }
+
   return (
     <div className="about-us-container">
-      {persons.map((person) => (
+      {korisnici.map((user) => (
         <PersonCard
-          key={person.id}
-          imageURL={person.imageURL}
-          fullName={person.fullName}
-          location={person.location}
-          description={person.description}
-          goToRepositories={person.goToRepositories}
+          id={user.id}
+          imgUrl={user.imgUrl}
+          name={user.name}
+          residency={user.residency}
+          desc={user.desc}
         />
       ))}
     </div>

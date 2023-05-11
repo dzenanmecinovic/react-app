@@ -23,17 +23,10 @@ export function Login() {
       setPrikaz(true);
     } catch (err) {
       setMsg(`Greska: ${err.response.data.err}`);
-      localStorage.removeItem("token");
+      localStorage.clear();
       setToken(null);
     }
   }
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("token")) {
-  //     setPrikaz(true);
-  //     // window.location.reload(false);
-  //   }
-  // }, [localStorage]);
 
   function handleClick(e) {
     e.preventDefault();
