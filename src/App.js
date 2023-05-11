@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error 404/Error";
-import Home from "./components/Home/Home";
 import AboutUs from "./pages/About-Us/About-Us";
 import Hotels from "./pages/Hotels/Hotels";
 import League from "./pages/League/League";
@@ -13,11 +12,16 @@ import Hotel from "./pages/Hotels/Hotel/Hotel";
 import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
 import { AppContext } from "./context/AppContext";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 export const BASE_URL = "https://api.quotable.io";
 
 function App() {
   const { token, setToken } = useContext(AppContext);
+  useEffect(() => {
+    const localToken = localStorage.getItem("token");
+    setToken(localToken);
+  }, []);
   return (
     <>
       <Navbar />
@@ -25,11 +29,46 @@ function App() {
         <Route index element={token ? <League /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/booking" element={<Hotels />} />
-        <Route path="/league" element={<League />} />
-        <Route path="/quotes" element={<Quotes />} />
-        <Route path="/hotel:id" element={<Hotel />} />
+        <Route
+          path="/about-us"
+          element={
+            <ProtectedRoute>
+              <AboutUs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/booking"
+          element={
+            <ProtectedRoute>
+              <Hotels />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/league"
+          element={
+            <ProtectedRoute>
+              <League />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/quotes"
+          element={
+            <ProtectedRoute>
+              <Quotes />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/hotel:id"
+          element={
+            <ProtectedRoute>
+              <Hotel />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

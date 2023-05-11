@@ -18,9 +18,11 @@ export default function AboutUs() {
         },
       });
       const usersData = await users.data;
+      console.log(token);
       console.log(usersData);
     } catch (err) {
       console.log(err);
+      console.log(token);
     }
   }
   useEffect(() => {

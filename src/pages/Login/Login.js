@@ -18,7 +18,7 @@ export function Login() {
       const user = await axios.post(`${BASE_URL}/users/login`, data);
       const userInfo = await user.data;
       console.log(userInfo);
-      localStorage.setItem("token", JSON.stringify(userInfo.token));
+      localStorage.setItem("token", userInfo.token);
       setToken(userInfo.token);
       setPrikaz(true);
     } catch (err) {
