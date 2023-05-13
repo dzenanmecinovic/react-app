@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function AboutUs() {
   const token = localStorage.getItem("token");
-  const [korisnici, setKorisnici] = useState([]);
+  const [niz, setNiz] = useState([]);
 
   async function getUsers() {
     try {
@@ -18,7 +18,8 @@ export default function AboutUs() {
         },
       });
       const usersData = await users.data;
-      setKorisnici(usersData);
+      const nizObjekata = Object.values(usersData).flat();
+      setNiz(nizObjekata.slice(1, nizObjekata.length - 1));
     } catch (err) {
       console.log(err);
     }
@@ -27,21 +28,22 @@ export default function AboutUs() {
     getUsers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  if (!Array.isArray(korisnici)) {
+  if (!Array.isArray(niz)) {
     return <p>Nije validan format</p>;
   }
 
   return (
     <div className="about-us-container">
-      {korisnici.map((user) => (
-        <PersonCard
-          id={user.id}
-          imgUrl={user.imgUrl}
-          name={user.name}
-          residency={user.residency}
-          desc={user.desc}
-        />
-      ))}
+      {niz.map((korisnik) => {
+        return (
+          <PersonCard
+            key={korisnik.id}
+            imgUrl={korisnik.imgUrl}
+            name={korisnik.name}
+            desc={korisnik.desc}
+          />
+        );
+      })}
     </div>
   );
 }
