@@ -25,52 +25,54 @@ function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route index element={token ? <League /> : <Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/about-us"
-          element={
-            <ProtectedRoute>
-              <AboutUs />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/booking"
-          element={
-            <ProtectedRoute>
-              <Hotels />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/league"
-          element={
-            <ProtectedRoute>
-              <League />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/quotes"
-          element={
-            <ProtectedRoute>
-              <Quotes />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/hotel:id"
-          element={
-            <ProtectedRoute>
-              <Hotel />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <main style={{ minHeight: "75vh" }}>
+        <Routes>
+          <Route index element={token ? <League /> : <Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/about-us"
+            element={
+              <ProtectedRoute>
+                <AboutUs />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/booking"
+            element={
+              <ProtectedRoute>
+                <Hotels />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/league"
+            element={
+              <ProtectedRoute>
+                <League />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/quotes"
+            element={
+              <ProtectedRoute>
+                <Quotes />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/hotel:id"
+            element={
+              <ProtectedRoute>
+                <Hotel />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );

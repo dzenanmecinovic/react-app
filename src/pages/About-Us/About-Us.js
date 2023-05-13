@@ -25,6 +25,7 @@ export default function AboutUs() {
   }
   useEffect(() => {
     getUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (!Array.isArray(korisnici)) {
     return <p>Nije validan format</p>;

@@ -25,7 +25,7 @@ export default function Quotes() {
   });
   return (
     <>
-      {quotes.length > 0 ? (
+      {quotes > 0 ? (
         <div>
           <div className="quote-container">
             {quotes.map((quote) => (
