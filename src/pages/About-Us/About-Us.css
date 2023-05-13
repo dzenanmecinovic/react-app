@@ -1,8 +1,10 @@
 .about-us-container {
-  height: 78.5vh;
+  height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: repeat(4, 250px);
+  grid-template-columns: repeat(4, 20vw);
   justify-content: center;
-  grid-auto-rows: minmax(420px, auto);
-  grid-gap: 40px;
+  place-content: center, center;
+  grid-gap: 2.5rem;
+  margin-top: 5rem;
 }

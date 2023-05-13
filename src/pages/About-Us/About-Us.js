@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import PersonCard from "../../components/Cards/PersonCard/PersonCard";
-import persons from "../../common/persons.json";
 import "./About-Us.css";
 import { BASE_URL } from "../../config/api";
 import axios from "axios";
@@ -19,7 +18,7 @@ export default function AboutUs() {
       });
       const usersData = await users.data;
       const nizObjekata = Object.values(usersData).flat();
-      setNiz(nizObjekata.slice(1, nizObjekata.length - 1));
+      setNiz(nizObjekata.slice(1, nizObjekata.length));
     } catch (err) {
       console.log(err);
     }
@@ -41,6 +40,8 @@ export default function AboutUs() {
             imgUrl={korisnik.imgUrl}
             name={korisnik.name}
             desc={korisnik.desc}
+            residency={korisnik.residency}
+            email={korisnik.email}
           />
         );
       })}
