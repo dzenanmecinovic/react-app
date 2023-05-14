@@ -56,9 +56,6 @@ export default function HotelCard(props) {
             <span style={{ color: "gray" }}>{reaction} </span>
             <span style={{ color: "gray" }}>({props.reviews} </span>)
           </p>
-          {/* 1. nacin uslovnog prikazivanja (Conditional rendering) */}
-          {/* {showRecomendation && <p>Recomendation</p>} */}
-          {/* 2. nacin uslovnog prikazivanja (Conditional rendering) */}
           {showRecomendation ? <p>Recomendation</p> : <></>}
           <button id="booking">Book</button>
         </div>

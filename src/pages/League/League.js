@@ -6,7 +6,6 @@ import "./League.css";
 export default function League() {
   const [teams, setTeams] = useState(teamsJSON);
   const [extended, setExtended] = useState(null);
-  console.log(teams);
 
   const deleteTeam = (id) => {
     const filteredTeams = teams.filter((team) => team.id !== id);

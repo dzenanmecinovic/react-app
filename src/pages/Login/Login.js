@@ -22,7 +22,6 @@ export function Login() {
       localStorage.setItem("token", userInfo.token);
       setToken(userInfo.token);
       setAdmin(userInfo.user.isAdmin);
-      console.log(userInfo.user.isAdmin);
       setPrikaz(true);
     } catch (err) {
       setMsg(`Greska: ${err.response.data.err}`);
