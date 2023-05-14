@@ -1,9 +1,17 @@
 .about-us-container {
-  height: 50vh;
+  height: 80vh;
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(4, 20vw);
   justify-content: center;
   grid-gap: 2.5rem;
-  margin-top: 5rem;
+}
+
+#forbidden {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: -2rem;
+  display: hidden;
+  color: red;
+  text-shadow: 0 0 5px #252525;
 }

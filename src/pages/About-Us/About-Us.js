@@ -6,12 +6,21 @@ import axios from "axios";
 import { AppContext } from "../../context/AppContext";
 
 export default function AboutUs() {
+  const { Admin } = useContext(AppContext);
   const token = localStorage.getItem("token");
   const { niz, setNiz } = useContext(AppContext);
+  const { Forbidden, setForbidden } = useContext(AppContext);
 
   const deleteUser = function (id) {
     const filtriraniUseri = niz.filter((korisnik) => korisnik.id !== id);
-    setNiz(filtriraniUseri);
+    if (Admin) {
+      setNiz(filtriraniUseri);
+    } else {
+      setForbidden("Niste Admin!");
+      setTimeout(() => {
+        setForbidden("");
+      }, 1000 * 2);
+    }
   };
 
   async function getUsers() {
@@ -24,7 +33,8 @@ export default function AboutUs() {
       });
       const usersData = await users.data;
       const nizObjekata = Object.values(usersData).flat();
-      setNiz(nizObjekata.slice(1, nizObjekata.length));
+      setNiz(nizObjekata.slice(1, 5));
+      console.log(nizObjekata);
     } catch (err) {
       console.log(err);
     }
@@ -38,20 +48,23 @@ export default function AboutUs() {
   }
 
   return (
-    <div className="about-us-container">
-      {niz.map((korisnik) => {
-        return (
-          <PersonCard
-            key={korisnik.id}
-            imgUrl={korisnik.imgUrl}
-            name={korisnik.name}
-            desc={korisnik.desc}
-            residency={korisnik.residency}
-            email={korisnik.email}
-            deleteUser={() => deleteUser(korisnik.id)}
-          />
-        );
-      })}
-    </div>
+    <>
+      <h1 id="forbidden">{Forbidden}</h1>
+      <div className="about-us-container">
+        {niz.map((korisnik) => {
+          return (
+            <PersonCard
+              key={korisnik.id}
+              imgUrl={korisnik.imgUrl}
+              name={korisnik.name}
+              desc={korisnik.desc}
+              residency={korisnik.residency}
+              email={korisnik.email}
+              deleteUser={() => deleteUser(korisnik.id)}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }

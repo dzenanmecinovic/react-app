@@ -12,6 +12,7 @@ export function Login() {
   const [prikaz, setPrikaz] = useState(false);
   const navigation = useNavigate();
   const { setToken } = useContext(AppContext);
+  const { setAdmin } = useContext(AppContext);
 
   async function loginSystem(data) {
     try {
@@ -20,6 +21,8 @@ export function Login() {
       console.log(userInfo);
       localStorage.setItem("token", userInfo.token);
       setToken(userInfo.token);
+      setAdmin(userInfo.user.isAdmin);
+      console.log(userInfo.user.isAdmin);
       setPrikaz(true);
     } catch (err) {
       setMsg(`Greska: ${err.response.data.err}`);

@@ -5,3 +5,11 @@
   padding-top: -3rem;
   padding-bottom: 3rem;
 }
+
+#hotelBack {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #252525;
+  text-shadow: 0 0 2px black;
+}

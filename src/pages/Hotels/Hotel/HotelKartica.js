@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Hotel.css";
 
 export default function HotelKartica(props) {
@@ -13,7 +14,6 @@ export default function HotelKartica(props) {
       <div>
         <div>
           <span>🚗 Free parking</span>
-          <span>🐾 Pet friendly</span>
         </div>
         <div>
           <span>Free wifi and 24/7 front desk</span>
@@ -30,18 +30,24 @@ export default function HotelKartica(props) {
           <span>🚍 </span>Dublin Drumcondra Station - 5 min drive
         </p>
         <p>
-          <span> 🚶 </span>Dublin Tara Street Station - 26 min walk
+          <span> 🚶 </span>Dublin Tara Street Station -
+          {Math.trunc(Math.random() * 40)} min walk
         </p>
         <p>
-          <span> 🚶 </span>Connolly Station - 29 min walk
+          <span> 🚶 </span>Connolly Station - {Math.trunc(Math.random() * 40)}
+          min walk
         </p>
         <p>
-          <span> 🚶 </span>Four Courts Station - 8 min walk
+          <span> 🚶 </span>Four Courts Station -{Math.trunc(Math.random() * 40)}
+          min walk
         </p>
         <p>
           <span> 🚶 </span>Smithfield Station - 5 min walk
         </p>
       </div>
+      <Link style={{ textDecoration: "none" }} to={"/booking"}>
+        <p id="hotelBack">Back to the Hotel Page</p>
+      </Link>
     </div>
   );
 }
