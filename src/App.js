@@ -13,6 +13,7 @@ import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
 import { AppContext } from "./context/AppContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import hotelsJSON from "./common/hotels.json";
 
 export const BASE_URL = "https://api.quotable.io";
 
@@ -39,10 +40,18 @@ function App() {
             }
           />
           <Route
-            path="/booking"
+            path="/booking/"
             element={
               <ProtectedRoute>
                 <Hotels />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/booking/:id"
+            element={
+              <ProtectedRoute>
+                <Hotel />
               </ProtectedRoute>
             }
           />

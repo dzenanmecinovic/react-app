@@ -8,6 +8,7 @@ export default function Hotels() {
       <div className="hotels">
         {hotelsJSON.map((hotel) => (
           <HotelCard
+            hotelsJSON={hotelsJSON}
             key={hotel.id}
             imageURL={hotel.imageURL}
             name={hotel.name}
@@ -15,6 +16,7 @@ export default function Hotels() {
             description={hotel.description}
             rating={hotel.rating}
             reviews={hotel.reviews}
+            id={hotel.id}
           />
         ))}
       </div>

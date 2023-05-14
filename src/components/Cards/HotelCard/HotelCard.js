@@ -1,7 +1,9 @@
 import React from "react";
 import "./HotelCard.css";
+import { Link } from "react-router-dom";
 
 export default function HotelCard(props) {
+  const { id } = props;
   const oneStar = <span>⭐</span>;
   const halfStar = (
     <span style={{ color: "yellow", backgroundColor: "#252525" }}>✩</span>
@@ -42,7 +44,9 @@ export default function HotelCard(props) {
   return (
     <div className="hotelgrid">
       <div className="Hotelcard">
-        <img src={props.imageURL} alt={"profile_img"} className="hotelimg" />
+        <Link to={`/booking/${id}`}>
+          <img src={props.imageURL} alt={"profile_img"} className="hotelimg" />
+        </Link>
         <div>
           <p className="hotelname">{props.name}</p>
           <h3>{stars(props.stars)}</h3>

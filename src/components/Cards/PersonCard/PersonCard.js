@@ -1,7 +1,14 @@
 import React from "react";
 import "./PersonCard.css";
 
-export default function PersonCard({ imgUrl, name, desc, residency, email }) {
+export default function PersonCard({
+  imgUrl,
+  name,
+  desc,
+  residency,
+  email,
+  deleteUser,
+}) {
   return (
     <div className="pcard">
       <div className="firstPart">
@@ -12,6 +19,9 @@ export default function PersonCard({ imgUrl, name, desc, residency, email }) {
       <div className="secondPart">
         <p id="email">{email}</p>
         <p>{desc}</p>
+        <button id="deleteUser" onClick={deleteUser}>
+          delete user
+        </button>
       </div>
     </div>
   );

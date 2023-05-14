@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./TeamCard.css";
-// import { BASE_URL } from "../../../App";
 
 function TeamCard({
   name,
