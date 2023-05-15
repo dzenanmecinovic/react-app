@@ -3,6 +3,7 @@ import React, { createContext, useState } from "react";
 const AppContext = createContext();
 
 function ContextProvider({ children }) {
+  const [data, setData] = useState([]);
   const [Forbidden, setForbidden] = useState("");
   const [Admin, setAdmin] = useState(false);
   const [token, setToken] = useState(null);
@@ -16,6 +17,8 @@ function ContextProvider({ children }) {
     setAdmin,
     Forbidden,
     setForbidden,
+    data,
+    setData,
   };
 
   return (

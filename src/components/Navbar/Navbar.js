@@ -35,7 +35,7 @@ export default function Navbar() {
             <h2 style={{ fontFamily: "Arial" }}>Home</h2>
           </NavLink>
           <NavLink
-            to={"/about-us"}
+            to={"/aboutus"}
             style={({ isActive }) => (isActive ? activeStyles : styles)}
           >
             <h2 style={{ fontFamily: "Arial" }}>About Us</h2>

@@ -13,7 +13,7 @@ import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
 import { AppContext } from "./context/AppContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-import hotelsJSON from "./common/hotels.json";
+import User from "./pages/About-Us/User/User";
 
 export const BASE_URL = "https://api.quotable.io";
 
@@ -22,6 +22,7 @@ function App() {
   useEffect(() => {
     const localToken = localStorage.getItem("token");
     setToken(localToken);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
@@ -32,10 +33,18 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
-            path="/about-us"
+            path="/aboutus"
             element={
               <ProtectedRoute>
                 <AboutUs />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/aboutus:email"
+            element={
+              <ProtectedRoute>
+                <User />
               </ProtectedRoute>
             }
           />
@@ -68,14 +77,6 @@ function App() {
             element={
               <ProtectedRoute>
                 <Quotes />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/hotel:id"
-            element={
-              <ProtectedRoute>
-                <Hotel />
               </ProtectedRoute>
             }
           />

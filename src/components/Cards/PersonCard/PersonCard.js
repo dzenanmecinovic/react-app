@@ -1,5 +1,6 @@
 import React from "react";
 import "./PersonCard.css";
+import { Link } from "react-router-dom";
 
 export default function PersonCard({
   imgUrl,
@@ -13,7 +14,9 @@ export default function PersonCard({
     <>
       <div className="pcard">
         <div className="firstPart">
-          <img src={imgUrl} alt={"profile_img"} className="img" />
+          <Link to={`/aboutus/${name.replace(" ", "").toLowerCase()}`}>
+            <img src={imgUrl} alt={"profile_img"} className="img" />
+          </Link>
           <h3>{name}</h3>
           <h3>{residency}</h3>
         </div>

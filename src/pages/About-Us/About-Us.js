@@ -34,6 +34,7 @@ export default function AboutUs() {
       const usersData = await users.data;
       const nizObjekata = Object.values(usersData).flat();
       setNiz(nizObjekata.slice(1, 5));
+      console.log(nizObjekata);
     } catch (err) {
       console.log(err);
     }
