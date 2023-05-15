@@ -10,6 +10,7 @@ export default function AboutUs() {
   const token = localStorage.getItem("token");
   const { niz, setNiz } = useContext(AppContext);
   const { Forbidden, setForbidden } = useContext(AppContext);
+  const { setData } = useContext(AppContext);
 
   const deleteUser = function (id) {
     const filtriraniUseri = niz.filter((korisnik) => korisnik.id !== id);
@@ -34,7 +35,7 @@ export default function AboutUs() {
       const usersData = await users.data;
       const nizObjekata = Object.values(usersData).flat();
       setNiz(nizObjekata.slice(1, 5));
-      console.log(nizObjekata);
+      setData(nizObjekata);
     } catch (err) {
       console.log(err);
     }
