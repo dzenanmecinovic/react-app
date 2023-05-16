@@ -1,5 +1,5 @@
 .about-us-container {
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(4, 20vw);
